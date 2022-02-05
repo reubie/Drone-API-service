@@ -1,10 +1,15 @@
 package com.example.droneAPIservice.controllerpackage;
 
+import com.example.droneAPIservice.datatransferpackage.MedicationDataTransfer;
 import com.example.droneAPIservice.entitypackage.Medication;
+import com.example.droneAPIservice.services.ImageService;
+import com.example.droneAPIservice.services.MedicationService;
+import com.example.droneAPIservice.utilities.ResourceNotFoundException;
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -21,7 +26,7 @@ public class MedicationController {
     private ImageService imageService;
 
     @PostMapping()
-    public ResponseEntity<Medication> register(@NotNull @Valid @RequestBody MedicationDto dto)
+    public ResponseEntity<Medication> register(@NotNull @Valid @RequestBody MedicationDataTransfer dto)
             throws IllegalArgumentException {
         Medication med = this.mService.save(dto);
         return ResponseEntity.ok(med);
@@ -47,7 +52,7 @@ public class MedicationController {
     }
 
     @PutMapping()
-    public ResponseEntity<Medication> update(@NotNull @Valid @RequestBody MedicationDto dto)
+    public ResponseEntity<Medication> update(@NotNull @Valid @RequestBody MedicationDataTransfer dto)
             throws ResourceNotFoundException, IllegalArgumentException {
         return ResponseEntity.ok(this.mService.update(dto));
     }

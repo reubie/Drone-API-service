@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 public class Model {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

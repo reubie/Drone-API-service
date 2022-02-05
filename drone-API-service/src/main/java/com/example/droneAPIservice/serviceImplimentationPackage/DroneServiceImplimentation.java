@@ -1,5 +1,9 @@
 package com.example.droneAPIservice.serviceImplimentationPackage;
 
+import com.example.droneAPIservice.dao.CustomDroneRepository;
+import com.example.droneAPIservice.dao.DroneRepository;
+import com.example.droneAPIservice.dao.MedicationRepository;
+import com.example.droneAPIservice.dao.SerialNumberRepository;
 import com.example.droneAPIservice.datatransferpackage.DroneDataTransfer;
 import com.example.droneAPIservice.entitypackage.Drone;
 import com.example.droneAPIservice.entitypackage.Medication;
@@ -22,7 +26,7 @@ import java.util.Optional;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class DroneServiceImplimentation implements DroneServices {
+public class DroneServiceImpl implements DroneServices {
 
     private final DroneRepository droneRepository;
 
@@ -117,7 +121,7 @@ public class DroneServiceImplimentation implements DroneServices {
         SerialNumber oldSerialNumber = existingDrone.getSerialNumber();
         mapper.map(drone, existingDrone);
         if (drone.getModel() != null) {
-            Model model = drone.getModel();
+            Model model = (Model) drone.getModel();
             model.setValue();
             existingDrone.setModel(model);
         }

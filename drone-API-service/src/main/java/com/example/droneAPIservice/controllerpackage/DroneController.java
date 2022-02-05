@@ -1,7 +1,12 @@
 package com.example.droneAPIservice.controllerpackage;
 
+import com.example.droneAPIservice.datatransferpackage.DroneDataTransfer;
 import com.example.droneAPIservice.entitypackage.Drone;
 import com.example.droneAPIservice.entitypackage.Medication;
+import com.example.droneAPIservice.services.DroneServices;
+import com.example.droneAPIservice.services.MedicationService;
+import com.example.droneAPIservice.utilities.RequirementNotMetException;
+import com.example.droneAPIservice.utilities.ResourceNotFoundException;
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +22,13 @@ import java.util.Optional;
 @RequestMapping(value = "/drone", produces = "application/json", consumes = "application/json")
 public class DroneController {
     @Autowired
-    private DroneService droneService;
+    private DroneServices droneService;
 
     @Autowired
     private MedicationService medicationService;
 
     @PostMapping()
-    public ResponseEntity<Drone> register(@NotNull @Valid @RequestBody DroneDto dto)
+    public ResponseEntity<Drone> register(@NotNull @Valid @RequestBody DroneDataTransfer dto)
             throws IllegalArgumentException, RequirementNotMetException {
         return ResponseEntity.ok(this.droneService.register(dto));
     }
@@ -35,7 +40,7 @@ public class DroneController {
     }
 
     @PutMapping()
-    public ResponseEntity<Drone> update(@NotNull @Valid @RequestBody DroneDto dto)
+    public ResponseEntity<Drone> update(@NotNull @Valid @RequestBody DroneDataTransfer dto)
             throws ResourceNotFoundException, IllegalArgumentException {
         return ResponseEntity.ok(this.droneService.update(dto));
     }
