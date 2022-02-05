@@ -1,5 +1,7 @@
 package com.example.droneAPIservice.datatransferpackage;
 
+import com.example.droneAPIservice.entitypackage.Medication;
+import com.example.droneAPIservice.entitypackage.SerialNumber;
 import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
