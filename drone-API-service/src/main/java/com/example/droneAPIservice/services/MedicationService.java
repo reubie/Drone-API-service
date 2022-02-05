@@ -5,7 +5,7 @@ import com.example.droneAPIservice.entitypackage.Drone;
 import com.example.droneAPIservice.entitypackage.Medication;
 import com.example.droneAPIservice.utilities.ResourceNotFoundException;
 
-public interface MeicationService {
+public interface MedicationService {
 
     public Medication save(MedicationDataTransfer medication) throws IllegalArgumentException;
 
