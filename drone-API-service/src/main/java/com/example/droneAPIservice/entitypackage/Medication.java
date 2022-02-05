@@ -1,11 +1,12 @@
 package com.example.droneAPIservice.entitypackage;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.sun.istack.NotNull;
+
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Entity

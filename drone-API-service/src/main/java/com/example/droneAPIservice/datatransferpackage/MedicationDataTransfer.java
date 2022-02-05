@@ -1,10 +1,12 @@
 package com.example.droneAPIservice.datatransferpackage;
 
-import com.sun.istack.NotNull;
+import com.example.droneAPIservice.entitypackage.Drone;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Data

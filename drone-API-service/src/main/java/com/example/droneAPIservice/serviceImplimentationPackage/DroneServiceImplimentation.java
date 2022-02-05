@@ -26,7 +26,7 @@ import java.util.Optional;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class DroneServiceImpl implements DroneServices {
+public class DroneServiceImplimentation implements DroneServices {
 
     private final DroneRepository droneRepository;
 

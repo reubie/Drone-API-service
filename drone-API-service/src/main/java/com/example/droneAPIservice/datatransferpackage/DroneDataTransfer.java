@@ -2,6 +2,7 @@ package com.example.droneAPIservice.datatransferpackage;
 
 import com.example.droneAPIservice.entitypackage.Medication;
 import com.example.droneAPIservice.entitypackage.SerialNumber;
+import com.example.droneAPIservice.utilities.State;
 import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;

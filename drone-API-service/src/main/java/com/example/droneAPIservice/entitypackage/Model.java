@@ -2,13 +2,14 @@ package com.example.droneAPIservice.entitypackage;
 
 import com.example.droneAPIservice.utilities.ModelEnum;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.sun.istack.NotNull;
+
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "weight_model")
@@ -40,10 +41,6 @@ public class Model {
 
     public void setValue(ModelEnum name) {
         switch (name) {
-            case LIGHT_WEIGHT:
-                this.value = 100;
-                this.name = ModelEnum.LIGHT_WEIGHT;
-                break;
             case MIDDLE_WEIGHT:
                 this.value = 200;
                 this.name = ModelEnum.MIDDLE_WEIGHT;

@@ -2,11 +2,12 @@ package com.example.droneAPIservice.entitypackage;
 
 import com.example.droneAPIservice.utilities.State;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.sun.istack.NotNull;
+
 import lombok.*;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
