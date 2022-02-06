@@ -27,18 +27,7 @@ implimentation of query in the medicine repository
 Content-type: application.json.
 
 
-1. localhost:8080/drone
-- register drone (POST): Request body is given below:
-```
-    {
-    "model": {
-        "id": 4,
-        "value": 500,
-        "name": "HEAVY_WEIGHT"
-    }
-}
-```
-- find drone by id(GET): localhost:8080/drone/{id}
+1. Find drone by id(GET): localhost:8080/drone/{id}
 - update drone (PUT): Request body is given below:
 ```
 
@@ -60,6 +49,18 @@ Content-type: application.json.
 
 ```
 - Delete drone (DELETE): localhost:8080/drone/{id}
+
+2.  localhost:8080/drone
+- register drone (POST): Request body is given below:
+```
+    {
+    "model": {
+        "id": 4,
+        "value": 500,
+        "name": "HEAVY_WEIGHT"
+    }
+}
+```
 - Load Medications from drone(GET): localhost:8080/drone/load?droneId=3&medicationIds=1,2,3. It accepts drone id and list of medication ids
 - Get drone from loaded medications: localhost:8080/drone/fromLoadedMedications/{droneId}. It checks loaded medications for a given drone.
 - Find available drones(GET): localhost:8080/drone/available/{totalMedicationWeight}. It returns a list of drones that are available, given the total medication weight to be loaded.
