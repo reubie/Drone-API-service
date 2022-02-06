@@ -11,7 +11,7 @@ import javax.validation.constraints.Pattern;
 
 @Data
 @NoArgsConstructor
-public class MedicationDataTransfer {
+public class MedicineDataTransfer {
     private long id;
 
     @NotBlank(message = "Name cannot be blank")
@@ -26,7 +26,7 @@ public class MedicationDataTransfer {
 
     private Drone drone;
 
-    public MedicationDataTransfer(String name, int weight, String code) {
+    public MedicineDataTransfer(String name, int weight, String code) {
         this.name = name;
         this.weight = weight;
         this.code = code;

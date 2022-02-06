@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
-public class AuditDrone extends Auditable {
+public class DroneMonitorClass extends CheckableClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -29,7 +29,7 @@ public class AuditDrone extends Auditable {
     @Column(name = "drone_id")
     private long droneId;
 
-    public AuditDrone(State state, int batteryCapacity) {
+    public DroneMonitorClass(State state, int batteryCapacity) {
         super();
         this.batteryCapacity = batteryCapacity;
         this.state = state;

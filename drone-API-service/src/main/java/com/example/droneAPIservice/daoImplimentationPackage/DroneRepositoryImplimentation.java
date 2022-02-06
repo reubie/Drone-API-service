@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Repository
-public class CustomDroneRepositoryImplimentation implements AppRepository {
+public class DroneRepositoryImplimentation implements AppRepository {
 
     @PersistenceContext
     private EntityManager entityManager;

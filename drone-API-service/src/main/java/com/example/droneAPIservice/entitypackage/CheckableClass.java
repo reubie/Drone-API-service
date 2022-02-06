@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class Auditable {
+public class CheckableClass {
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_created", nullable = false)

@@ -2,7 +2,7 @@ package com.example.droneAPIservice.serviceImplimentationPackage;
 
 import com.example.droneAPIservice.dao.CustomMedRepository;
 import com.example.droneAPIservice.dao.MedicationRepository;
-import com.example.droneAPIservice.datatransferpackage.MedicationDataTransfer;
+import com.example.droneAPIservice.datatransferpackage.MedicineDataTransfer;
 import com.example.droneAPIservice.entitypackage.Drone;
 import com.example.droneAPIservice.entitypackage.Medication;
 import com.example.droneAPIservice.services.MedicationService;
@@ -28,7 +28,7 @@ public class MedicationServiceImplimentation implements MedicationService {
     private final CustomMedRepository cMedRepository;
 
     @Override
-    public Medication save(MedicationDataTransfer medication) throws IllegalArgumentException {
+    public Medication save(MedicineDataTransfer medication) throws IllegalArgumentException {
         String code = this.getCode();
         medication.setCode(code);
         Medication newMed = new Medication();
@@ -61,7 +61,7 @@ public class MedicationServiceImplimentation implements MedicationService {
     }
 
     @Override
-    public Medication update(MedicationDataTransfer dto) throws ResourceNotFoundException, IllegalArgumentException {
+    public Medication update(MedicineDataTransfer dto) throws ResourceNotFoundException, IllegalArgumentException {
         Optional<Long> id = Optional.ofNullable(dto.getId());
         Medication medication = this.medicationRepository
                 .findById(id.orElseThrow(() -> new ResourceNotFoundException("Medication not found. id is null")))

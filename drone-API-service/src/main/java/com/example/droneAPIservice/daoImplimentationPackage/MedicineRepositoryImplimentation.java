@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public class CustomMedRepositoryImplimentation implements CustomMedRepository {
+public class MedicineRepositoryImplimentation implements CustomMedRepository {
 
     @Autowired
     private AppRepository appRepository;

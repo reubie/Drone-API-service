@@ -2,7 +2,7 @@ package com.example.droneAPIservice.scheduler;
 
 import com.example.droneAPIservice.dao.AuditDroneRepository;
 import com.example.droneAPIservice.dao.DroneRepository;
-import com.example.droneAPIservice.entitypackage.AuditDrone;
+import com.example.droneAPIservice.entitypackage.DroneMonitorClass;
 import com.example.droneAPIservice.entitypackage.Drone;
 import com.example.droneAPIservice.utilities.State;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class ScheduledBatteryCheck {
             try {
                 int batteryCapacity = drone.getBatteryCapacity();
                 State state = drone.getState();
-                AuditDrone aDrone = new AuditDrone(state, batteryCapacity);
+                DroneMonitorClass aDrone = new DroneMonitorClass(state, batteryCapacity);
                 aDrone.setDroneId(drone.getId());
                 aDroneRepository.save(aDrone);
             } catch (IllegalArgumentException exc) {

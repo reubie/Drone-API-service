@@ -1,6 +1,6 @@
 package com.example.droneAPIservice.controllerpackage;
 
-import com.example.droneAPIservice.datatransferpackage.MedicationDataTransfer;
+import com.example.droneAPIservice.datatransferpackage.MedicineDataTransfer;
 import com.example.droneAPIservice.entitypackage.Medication;
 import com.example.droneAPIservice.services.ImageService;
 import com.example.droneAPIservice.services.MedicationService;
@@ -26,7 +26,7 @@ public class MedicationController {
     private ImageService imageService;
 
     @PostMapping()
-    public ResponseEntity<Medication> register(@NotNull @Valid @RequestBody MedicationDataTransfer dto)
+    public ResponseEntity<Medication> register(@NotNull @Valid @RequestBody MedicineDataTransfer dto)
             throws IllegalArgumentException {
         Medication med = this.mService.save(dto);
         return ResponseEntity.ok(med);
@@ -52,7 +52,7 @@ public class MedicationController {
     }
 
     @PutMapping()
-    public ResponseEntity<Medication> update(@NotNull @Valid @RequestBody MedicationDataTransfer dto)
+    public ResponseEntity<Medication> update(@NotNull @Valid @RequestBody MedicineDataTransfer dto)
             throws ResourceNotFoundException, IllegalArgumentException {
         return ResponseEntity.ok(this.mService.update(dto));
     }
