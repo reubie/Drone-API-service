@@ -6,7 +6,7 @@ This is a service that Customers can communicate with drones via this REST API-b
 Data from the data.sql file is used to initialize it.
 
 
-##Installation / Setup instruction
+## Installation / Setup instruction
 -Open Terminal {Ctrl+Alt+T}
 -git clone https://github.com/reubie/Drone-API-service.git
 - Build:
