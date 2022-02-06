@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.validator.constraints.Range;
 
+import javax.management.Query;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -21,7 +22,7 @@ public class Drone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @Setter(AccessLevel.PRIVATE)
-    public long id;
+    private long id;
 
     @NotNull
     @OneToOne(mappedBy = "drone", cascade = CascadeType.ALL)
