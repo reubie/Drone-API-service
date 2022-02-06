@@ -7,10 +7,12 @@ import com.example.droneAPIservice.entitypackage.Medication;
 import com.example.droneAPIservice.utilities.ResourceNotFoundException;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-public class CustomMedRepositoryImpl implements CustomMedRepository {
+@Repository
+public class CustomMedRepositoryImplimentation implements CustomMedRepository {
 
     @Autowired
     private AppRepository appRepository;
@@ -18,9 +20,10 @@ public class CustomMedRepositoryImpl implements CustomMedRepository {
     @Override
     public Drone checkLoadedMedications(long droneId) throws ResourceNotFoundException {
         Medication medication = Medication.medication;
-        JPAQuery<Medication> mJpaQuery = (JPAQuery<Medication>) appRepository.startJPAQuery(medication);
+        JPAQuery<Medication> mJpaQuery = appRepository.startJPAQuery(medication);
         Optional<Medication> med = Optional.ofNullable(mJpaQuery.where(medication.drone.id.eq(droneId)).fetchFirst());
         return med.orElseThrow(() -> new ResourceNotFoundException("Drone could not be found")).getDrone();
     }
 
 }
+

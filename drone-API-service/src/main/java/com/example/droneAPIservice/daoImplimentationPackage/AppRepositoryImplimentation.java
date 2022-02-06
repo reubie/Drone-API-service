@@ -1,6 +1,7 @@
 package com.example.droneAPIservice.daoImplimentationPackage;
 
 import com.example.droneAPIservice.dao.AppRepository;
+import com.example.droneAPIservice.entitypackage.Medication;
 import com.querydsl.core.types.EntityPath;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.stereotype.Repository;
@@ -15,8 +16,8 @@ public class AppRepositoryImplimentation implements AppRepository {
     private EntityManager entityManager;
 
     @Override
-    public <E> JPAQuery<E> startJPAQuery(EntityPath<E> entityPath) {
-        return new JPAQuery<E>(entityManager).from(entityPath);
+    public <E> JPAQuery<E> startJPAQuery(Medication entityPath) {
+        return new JPAQuery<E>(entityManager).from((EntityPath<?>) entityPath);
     }
 
 }

@@ -1,11 +1,11 @@
 package com.example.droneAPIservice.dao;
 
-import com.querydsl.core.types.EntityPath;
+import com.example.droneAPIservice.entitypackage.Medication;
 import com.querydsl.jpa.impl.JPAQuery;
 
 public interface AppRepository {
 
-    <E> JPAQuery<E> startJPAQuery(EntityPath<E> entityPath);
+    <E> JPAQuery<E> startJPAQuery(Medication entityPath);
 
 }
 

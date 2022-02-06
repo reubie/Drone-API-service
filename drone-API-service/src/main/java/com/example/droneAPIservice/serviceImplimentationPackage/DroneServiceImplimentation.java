@@ -10,6 +10,7 @@ import com.example.droneAPIservice.entitypackage.Medication;
 import com.example.droneAPIservice.entitypackage.Model;
 import com.example.droneAPIservice.entitypackage.SerialNumber;
 import com.example.droneAPIservice.services.DroneServices;
+import com.example.droneAPIservice.utilities.ModelEnum;
 import com.example.droneAPIservice.utilities.RequirementNotMetException;
 import com.example.droneAPIservice.utilities.ResourceNotFoundException;
 import com.example.droneAPIservice.utilities.State;
@@ -50,7 +51,7 @@ public class DroneServiceImplimentation implements DroneServices {
                     exists = this.sNumberRepository.findByValue(serialNumber) != null;
                 }
                 SerialNumber number = new SerialNumber(serialNumber);
-                Model model = new Model(drone.getModel().getName());
+                Model model = new Model((ModelEnum) drone.getModel().getAttribute(serialNumber));
 
                 Drone newDrone = new Drone(number, model);
                 newDrone.setBatteryCapacity(100);

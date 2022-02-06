@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="521405fd-ec20-4d9f-ad5c-17767c4c8ec8" name="dronedb." url="jdbc:postgresql://localhost:5432/dronedb" driverClass="org.postgresql.Driver" />
+    </data-sources>
     <data-source-infos>
       <data-source-info id="" persistence-unit-name="Default" />
     </data-source-infos>
