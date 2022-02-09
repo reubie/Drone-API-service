@@ -45,6 +45,7 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="f05c59fa-bcc0-4bbf-92bd-a3ee836994f1" dataset="information_schema.sql_sizing" active-filter-id="" />
     <filter-actions connection-id="f05c59fa-bcc0-4bbf-92bd-a3ee836994f1" dataset="information_schema.sql_parts" active-filter-id="" />
+    <filter-actions connection-id="f05c59fa-bcc0-4bbf-92bd-a3ee836994f1" dataset="public.drone" active-filter-id="" />
     <filter-actions connection-id="f05c59fa-bcc0-4bbf-92bd-a3ee836994f1" dataset="public.audit_drone" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="f05c59fa-bcc0-4bbf-92bd-a3ee836994f1" dataset="information_schema.sql_implementation_info" active-filter-id="" />
   </component>

@@ -1,7 +1,6 @@
 package com.example.droneAPIservice.services;
 
 import com.example.droneAPIservice.datatransferpackage.MedicineDataTransfer;
-import com.example.droneAPIservice.entitypackage.Drone;
 import com.example.droneAPIservice.entitypackage.Medication;
 import com.example.droneAPIservice.utilities.ResourceNotFoundException;
 
@@ -17,6 +16,6 @@ public interface MedicationService {
 
     public Medication imageUpdate(Long id, byte[] imageData) throws ResourceNotFoundException, IllegalArgumentException;
 
-    public Drone checkLoadedMedications(long droneId) throws ResourceNotFoundException;
+    public Long checkLoadedMedications(long droneId) throws ResourceNotFoundException;
 
 }

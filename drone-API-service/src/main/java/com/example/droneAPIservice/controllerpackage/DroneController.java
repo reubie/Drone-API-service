@@ -65,7 +65,7 @@ public class DroneController {
     }
 
     @GetMapping("fromLoadedMedications/{droneId}")
-    public ResponseEntity<Drone> checkLoadedMedications(@PathVariable Long droneId)
+    public ResponseEntity<Long> checkLoadedMedications(@PathVariable Long droneId)
             throws ResourceNotFoundException {
         return ResponseEntity.ok(this.medicationService.checkLoadedMedications(droneId));
     }

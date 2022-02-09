@@ -22,7 +22,7 @@ public class Drone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @Setter(AccessLevel.PRIVATE)
-    private long id;
+    public long id;
 
     @NotNull
     @OneToOne(mappedBy = "drone", cascade = CascadeType.ALL)

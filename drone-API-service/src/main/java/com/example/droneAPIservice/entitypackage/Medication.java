@@ -33,6 +33,7 @@ public class Medication {
     @ManyToOne
     @JoinColumn(name = "medication_id")
     public static Medication medication;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -60,7 +61,7 @@ public class Medication {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "drone_id")
     @JsonBackReference
-    private Drone drone;
+    public Drone drone;
 
     public Medication getMedication() {
         return medication;
